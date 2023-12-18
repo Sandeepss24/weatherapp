@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    
+}
+#container{
+    position: relative;
+    height: 130vh;
+    width: 100%;
+}
+@media screen and (max-width:900) {
+    #container
+{
+   background: linear-gradient(135deg,#00feba,#5b548a);
+   height: 350vh;
+}
+}
+.card{
+    width: 140%;
+    max-width: 470px;
+    /* background: linear-gradient(135deg,#c1ddd6,#203f81); */
+    background-image: url('https://img.freepik.com/free-photo/close-up-blue-curved-sheets-paper_23-2148319070.jpg');
+    background-size: cover;
+    color: #fff;
+    margin: 50px auto 0;
+    border-radius: 20px;
+    padding: 20px 20px;
+    text-align: center;
+}
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search input{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 40px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+.search button{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.search button img{
+    width: 14px;
+}
+
+.weather-icon{
+   width: 200px;
+   margin-top: 0px; 
+   /* cursor: pointer; */
+}
+.weather-icon:hover{
+    transform: scale(1.4);
+}
+.weather h1{
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+.weather h2{
+    font-size: 45px;
+    font-weight: 450px;
+    margin-top: -10px;
+    color: #fff;
+}
+.details{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+    margin-left: 25px;
+}
+.col{
+    display:block;
+    align-items: center;
+    text-align: left;
+    margin-top: -19px;
+}
+.col img{
+    width: 46px;
+    margin-right: 13px;
+    margin-bottom: 41px;
+    height: 43px;
+    cursor: grab;
+}
+.col img:hover{
+   animation: shake 0.9s;
+}
+@keyframes shake{
+    10%{
+        transform: rotate(30deg);
+    }
+    20%{
+        transform: rotate(-30deg);
+    }
+    30%{
+        transform: rotate(30deg);
+    }
+    40%{
+        transform: rotate(-30deg);
+    }
+}
+.humidity , .wind , .country , .pressure{
+    font-size: 14px;
+    margin-top: -25px;
+    padding-top: 0px;
+    display: flex;
+    color: #fff;
+}
+.name{
+    color: white;
+}
+.weather{
+    display: none;
+}
+.error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
