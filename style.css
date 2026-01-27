@@ -3,49 +3,93 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
-    
 }
 #container{
     position: relative;
-    height: 130vh;
+    min-height: 100vh;
     width: 100%;
+    padding: 20px;
 }
-@media screen and (max-width:900) {
-    #container
-{
-   background: linear-gradient(135deg,#00feba,#5b548a);
-   height: 350vh;
-}
+@media screen and (max-width: 900px) {
+    #container {
+        background: linear-gradient(135deg,#00feba,#5b548a);
+        min-height: 100vh;
+        padding: 10px;
+    }
 }
 .card{
-    width: 140%;
+    width: 100%;
     max-width: 470px;
-    /* background: linear-gradient(135deg,#c1ddd6,#203f81); */
     background-image: url('https://img.freepik.com/free-photo/close-up-blue-curved-sheets-paper_23-2148319070.jpg');
     background-size: cover;
     color: #fff;
-    margin: 50px auto 0;
+    margin: 0px auto;
     border-radius: 20px;
-    padding: 20px 20px;
+    padding: 20px;
     text-align: center;
+}
+@media screen and (max-width: 768px) {
+    .card {
+        margin: 20px auto 0;
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .card {
+        margin: 10px auto 0;
+        padding: 10px;
+    }
 }
 .search{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
+}
+.search-container {
+    position: relative;
+    flex: 1;
+    margin-right: 16px;
 }
 .search input{
     border: 0;
     outline: 0;
     background: #ebfffc;
     color: #555;
-    padding: 10px 25px;
+    padding: 10px 40px 10px 25px;
     height: 40px;
     border-radius: 30px;
-    flex: 1;
-    margin-right: 16px;
+    width: 100%;
     font-size: 18px;
+    box-sizing: border-box;
+}
+.clear-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+.clear-icon:hover {
+    color: #333;
+}
+@media screen and (max-width: 480px) {
+    .search-container {
+        margin-right: 10px;
+    }
+    .search input {
+        font-size: 16px;
+        padding: 8px 35px 8px 20px;
+        height: 35px;
+    }
+    .clear-icon {
+        right: 12px;
+        font-size: 14px;
+    }
 }
 .search button{
     border: 0;
@@ -55,6 +99,19 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
+    flex-shrink: 0;
+}
+.search .clear-btn {
+    margin-right: 8px;
+}
+@media screen and (max-width: 480px) {
+    .search button {
+        width: 35px;
+        height: 35px;
+    }
+    .search .clear-btn {
+        margin-right: 5px;
+    }
 }
 .search button img{
     width: 14px;
@@ -62,12 +119,19 @@
 
 .weather-icon{
    width: 200px;
-   margin-top: 0px; 
-   /* cursor: pointer; */
+   margin-top: 0px;
 }
-.weather-icon:hover{
-    transform: scale(1.4);
+@media screen and (max-width: 768px) {
+    .weather-icon {
+        width: 150px;
+    }
 }
+@media screen and (max-width: 480px) {
+    .weather-icon {
+        width: 120px;
+    }
+}
+
 .weather h1{
     font-size: 24px;
     font-weight: 500;
@@ -79,61 +143,101 @@
     margin-top: -10px;
     color: #fff;
 }
+@media screen and (max-width: 768px) {
+    .weather h2 {
+        font-size: 35px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .weather h1 {
+        font-size: 20px;
+    }
+    .weather h2 {
+        font-size: 28px;
+    }
+}
 .details{
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     padding: 0 20px;
-    margin-top: 50px;
-    margin-left: 25px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+    .details {
+        padding: 0 10px;
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .details {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin-top: 20px;
+    }
 }
 .col{
-    display:block;
+    display: flex;
     align-items: center;
     text-align: left;
-    margin-top: -19px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+@media screen and (max-width: 480px) {
+    .col {
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 15px;
+    }
 }
 .col img{
     width: 46px;
-    margin-right: 13px;
-    margin-bottom: 41px;
     height: 43px;
+    margin-right: 13px;
     cursor: grab;
 }
-.col img:hover{
-   animation: shake 0.9s;
-}
-@keyframes shake{
-    10%{
-        transform: rotate(30deg);
-    }
-    20%{
-        transform: rotate(-30deg);
-    }
-    30%{
-        transform: rotate(30deg);
-    }
-    40%{
-        transform: rotate(-30deg);
+@media screen and (max-width: 480px) {
+    .col img {
+        width: 40px;
+        height: 37px;
+        margin-right: 10px;
     }
 }
+
 .humidity , .wind , .country , .pressure{
     font-size: 14px;
-    margin-top: -25px;
-    padding-top: 0px;
-    display: flex;
     color: #fff;
+    margin: 0;
+}
+@media screen and (max-width: 480px) {
+    .humidity, .wind, .country, .pressure {
+        font-size: 12px;
+    }
 }
 .name{
     color: white;
+    font-size: 12px;
+    margin-top: 5px;
+}
+@media screen and (max-width: 480px) {
+    .name {
+        font-size: 10px;
+    }
 }
 .weather{
     display: none;
 }
 .error{
-    text-align: left;
-    margin-left: 10px;
+    text-align: center;
     font-size: 14px;
     margin-top: 10px;
     display: none;
+    color: #fff;
+}
+@media screen and (max-width: 480px) {
+    .error {
+        font-size: 12px;
+        margin-top: 5px;
+    }
 }
